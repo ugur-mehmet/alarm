@@ -1,5 +1,17 @@
 <template name="alarms">
-  {{#each alarms}}
-    {{> alarmItem}}
-  {{/each}}
+  <div class="alarms">
+    <div class="form-style">
+        <div class="container">
+          <ul class="list-group">
+            <h3>Active alarms</h3>
+            {{#each alarms}}
+              {{> alarmItem}}
+            {{/each}}
+          </ul>
+
+        </div>
+    </div>
+
+  </div>
+
 </template>

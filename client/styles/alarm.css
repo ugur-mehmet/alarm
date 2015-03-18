@@ -1,6 +1,58 @@
+body{background-color: #f3f3f3;}
+*{
+  font-family: 'proxima-nova', 'Proxima Nova', sans-serif;
+}
+.break-el{
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+ /* Non standard for webkit */
+     word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+
+
+.alarms h3 {
+  text-align: center;
+  margin: 5px 0px 25px;
+}
 .panel{
   position: relative;
   top: 50px;
-  
 
+
+}
+
+.form-style .comment {
+  margin: 30px 0px 0px;
+}
+
+.form-style .container {
+  	width: 60%;
+  }
+
+
+.alarm{
+	margin-bottom: 10px;
+}
+
+.alarm p{
+	font-size: 28px;
+	color: #534540;
+	font-weight: 50;
+}
+
+
+a.alarmPost {
+  color: #000;
+
+}
+.alarmPost {
+  color:orange;
+  height:65px;
+  /*width:175px;*/
 }
