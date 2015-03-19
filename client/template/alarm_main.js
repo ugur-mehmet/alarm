@@ -3,4 +3,5 @@ Template.alarms.helpers({
     return Alarms.find({}, {sort:{mod_date:-1}});
 
   }
+
 });

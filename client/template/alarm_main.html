@@ -1,16 +1,22 @@
 <template name="alarms">
   <div class="alarms">
+    <h3>Active alarms</h3>
     <div class="form-style">
         <div class="container">
           <ul class="list-group">
-            <h3>Active alarms</h3>
+
             {{#each alarms}}
               {{> alarmItem}}
             {{/each}}
           </ul>
 
         </div>
+        <div class="btn-toolbar" style="width: 70%;">
+            <button type="button" class="btn pull-right btn-default btn-lg">Ack</button>
+            <button type="button" class="btn pull-right btn-default btn-lg">Global Ack</button>
+        </div>
     </div>
+
 
   </div>
 
