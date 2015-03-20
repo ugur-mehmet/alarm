@@ -9,8 +9,16 @@ Template.alarmItem.helpers({
       return Session.equals('selectedAlarm', this._id) ? "selected" : "nonselected";
 
     },
-    status: function() {
-    //  return Alarms.find({this._id})
+    alarmStatus: function() {
+      if(this.status=='ADD'){
+        console.log(this.status);
+        return 'add';
+      }
+      else{
+        console.log(this.status);
+        return 'clr';
+      }
+
     }
 
 });
