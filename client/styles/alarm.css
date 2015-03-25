@@ -105,6 +105,7 @@ li.list-group-item.clr.nonselected {
 
 .navbar-default .navbar-nav>li>a:hover {
   color: #2EFE9A;
+  text-transform: uppercase;
 }
 
 .navbar-default .navbar-brand {
