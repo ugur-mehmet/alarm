@@ -7,27 +7,31 @@ Meteor.startup(function () {
   Alarms.find().observeChanges({
 
     added: function(id,doc){
-      //var alarm = Alarms.findOne({_id:id});
       if (doc.status === 'ADD') {
-      doc.alarm_id = id;
-      localAlarms.insert(doc);
+        // delete doc._id;
+        doc.alarm_id = id;
+        localAlarms.insert(doc);
       }
     },
     changed: function(id, doc){
 
       if(doc.status === 'CLR'){
-        var localalarm = localAlarms.findOne({alarm_id: id, status: 'ADD'})
-        if(localalarm) {
 
-          localAlarms.update({alarm_id: id}, {$set: doc});
-          console.log(doc.alarm_id + doc.text + 'cleared');
+        var localalarm = localAlarms.findOne({alarm_id: id, status: 'ADD'});
+
+        if(localalarm) {
+          //console.log(id + "  " + localalarm._id);
+          localAlarms.update(localalarm._id, {$set: doc});
+
         }
 
       }
 
       if(doc.status === 'ADD'){
-        doc.alarm_id = id;
-        localAlarms.insert(doc);
+        var newdoc = Alarms.findOne(id);
+        delete newdoc._id;
+        newdoc.alarm_id = id;
+        localAlarms.insert(newdoc);
       }
 
 
