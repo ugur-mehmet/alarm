@@ -8,7 +8,6 @@ Meteor.startup(function () {
 
     added: function(id,doc){
       if (doc.status === 'ADD') {
-        // delete doc._id;
         doc.alarm_id = id;
         localAlarms.insert(doc);
       }
@@ -20,7 +19,6 @@ Meteor.startup(function () {
         var localalarm = localAlarms.findOne({alarm_id: id, status: 'ADD'});
 
         if(localalarm) {
-          //console.log(id + "  " + localalarm._id);
           localAlarms.update(localalarm._id, {$set: doc});
 
         }

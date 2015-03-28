@@ -5,3 +5,13 @@ Template.alarms.helpers({
   }
 
 });
+Template.alarms.events({
+  "click .btn-ack": function(e, t){
+      e.preventDefault();
+      status = localAlarms.findOne(Session.get('selectedAlarm')).status;
+      //alert(Session.get('selectedAlarm') + status);
+      if(status === 'CLR'){
+        localAlarms.remove(Session.get('selectedAlarm'));
+      }
+  }
+});
