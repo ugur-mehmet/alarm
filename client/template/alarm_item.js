@@ -1,3 +1,4 @@
+Session.setDefault('ack','');
 Template.alarmItem.helpers({
     // background: function(){
     //   return Session.get('background');
@@ -19,7 +20,16 @@ Template.alarmItem.helpers({
         return 'clr';
       }
 
+    },
+    mod_date: function(){
+      return moment(this.mod_date).format("ddd MMM DD YYYY hh:mm:ss");
     }
+
+
+    // ack: function() {
+    //   return Session.equals('ack', this._id) ? "ack" : "";
+    // }
+
 
 });
 Template.alarmItem.events({

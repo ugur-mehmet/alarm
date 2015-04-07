@@ -13,5 +13,14 @@ Template.alarms.events({
       if(status === 'CLR'){
         localAlarms.remove(Session.get('selectedAlarm'));
       }
+      // if(status === 'ADD'){
+      //   $(".selected").attr('style', 'background-color: black; color: yellow;');
+      //
+      //
+      // }
+      if(status === 'ADD'){
+        // Session.set('ack',Session.get('selectedAlarm'));
+        localAlarms.update(Session.get('selectedAlarm'), {$set: {ack:'yes'}});
+      }
   }
 });

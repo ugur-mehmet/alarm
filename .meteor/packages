@@ -5,8 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
-insecure
 twbs:bootstrap
 iron:router
 accounts-ui
 accounts-password
+momentjs:moment

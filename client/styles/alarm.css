@@ -14,7 +14,21 @@ body
        -moz-hyphens: auto;
         -ms-hyphens: auto;
             hyphens: auto;
+            margin: -7px 0px;
+            padding-top: 5px;
 }
+
+
+li.list-group-item.add.selected.yes{
+  color:yellow;
+  background:black;
+}
+
+li.list-group-item.add.nonselected.yes {
+  color:black;
+  background:yellow;
+}
+
 
 li.list-group-item.add.selected{
   color:red;
@@ -44,6 +58,7 @@ li.list-group-item.clr.nonselected {
   font-size: 22px;
 	color: #534540;
 	font-weight: 50;
+  padding:2px;
 }
 .panel{
   position: relative;
@@ -64,13 +79,17 @@ li.list-group-item.clr.nonselected {
 
 }
 .alarm .list-group-item{
-  height:50px;
+  height:34px;
   /*padding: 0px;*/
   margin-left: 2px;
   /*margin-top: 80px;
   margin-right: 45px;*/
-  margin-bottom: -5px
-  border: 2px;
+  /*margin-bottom: -5px*/
+  border: 1px;
+  padding-right: 0px;
+  padding-left:10px;
+  padding-bottom:0px;
+  padding-top:0px;
 }
 .container {
   border: solid 1px #999999;
