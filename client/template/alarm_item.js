@@ -35,9 +35,8 @@ Template.alarmItem.helpers({
 Template.alarmItem.events({
   "click": function(e, t){
       e.preventDefault();
-      var alarm_id = this._id;
-      console.log(alarm_id);
-      Session.set('selectedAlarm', alarm_id)
+      console.log(this._id);
+      Session.set('selectedAlarm', this._id)
       // Session.set('background','white');
       // Session.set('color', 'red');
 

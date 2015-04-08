@@ -10,6 +10,7 @@ Meteor.startup(function () {
       if (doc.status === 'ADD') {
         doc.alarm_id = id;
         localAlarms.insert(doc);
+        //Logs.insert(doc);
       }
     },
     changed: function(id, doc){
@@ -17,9 +18,12 @@ Meteor.startup(function () {
       if(doc.status === 'CLR'){
 
         var localalarm = localAlarms.findOne({alarm_id: id, status: 'ADD'});
-
+        var logalarm = Alarms.findOne(id);
+        delete logalarm._id;
+        logalarm.alarm_id = id;
         if(localalarm) {
           localAlarms.update(localalarm._id, {$set: doc});
+          Logs.insert(logalarm);
 
         }
 
@@ -30,6 +34,7 @@ Meteor.startup(function () {
         delete newdoc._id;
         newdoc.alarm_id = id;
         localAlarms.insert(newdoc);
+        Logs.insert(newdoc);
       }
 
 

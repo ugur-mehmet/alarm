@@ -90,7 +90,10 @@ li.list-group-item.clr.nonselected {
   padding-left:10px;
   padding-bottom:0px;
   padding-top:0px;
+  cursor: pointer;
 }
+
+
 .container {
   border: solid 1px #999999;
   border-top-color: #CCCCCC;
